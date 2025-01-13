@@ -1,6 +1,11 @@
-import { Slot } from "expo-router";
+import { Stack } from "expo-router";
+import React from "react";
 
-// Import your global CSS file
-import "../../global.css";
-
-export default Slot;
+export default function TabLayout() {
+  return (
+    <Stack>
+      <Stack.Screen name="index" options={{ headerShown: false }} />
+      <Stack.Screen name="test" />
+    </Stack>
+  );
+}

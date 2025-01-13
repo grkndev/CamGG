@@ -15,8 +15,7 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      },
-      "package": "com.gweepcreative.CamGG"
+      }
     },
     "web": {
       "bundler": "metro",
@@ -37,11 +36,6 @@
     ],
     "experiments": {
       "typedRoutes": true
-    },
-    "extra": {
-      "eas": {
-        "projectId": "bfe7eb96-090e-447e-82d3-ac23d11da0c8"
-      }
     }
   }
 }
