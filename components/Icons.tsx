@@ -1,4 +1,7 @@
-import { icons, IconNode } from "lucide-react-native";
+import { icons } from "lucide-react-native";
+import { createElement, useEffect, useState } from "react";
+import { SvgProps } from "react-native-svg";
+import { View } from "react-native";
 
 const Icon = ({
   name,
@@ -9,10 +12,18 @@ const Icon = ({
   color?: string;
   size?: number;
 }) => {
+  const [mounted, setMounted] = useState(false);
   
-  const LucideIcon = icons[name];
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
-  return <LucideIcon color={color} size={size} />;
+  if (!mounted) {
+    return <View style={{ width: size, height: size }} />;
+  }
+
+  const LucideIcon = icons[name];
+  return createElement(LucideIcon, { color, size } as SvgProps);
 };
 
 export default Icon;
