@@ -26,7 +26,7 @@ export default function TabLayout() {
   return (
     <Stack>
       <Stack.Screen name="index" options={{ headerShown: false }} />
-      <Stack.Screen name="test" />
+      <Stack.Screen name="VideoStream" />
     </Stack>
   );
 }
