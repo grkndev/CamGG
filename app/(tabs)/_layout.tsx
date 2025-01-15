@@ -1,6 +1,6 @@
 import { Stack } from "expo-router";
 import React from "react";
-import { CameraView, CameraType, useCameraPermissions } from "expo-camera";
+import { useCameraPermissions } from "expo-camera";
 import { Text, TouchableOpacity, View } from "react-native";
 
 export default function TabLayout() {

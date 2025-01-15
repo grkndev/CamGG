@@ -6,19 +6,17 @@ import Icon from "@/components/Icons";
 import { useKeepAwake } from "expo-keep-awake";
 import { CameraView, CameraType, useCameraPermissions } from "expo-camera";
 import Timer from "@/lib/Timer";
-// import * as Network from "expo-network";
 
 export default function Index() {
   useKeepAwake();
 
   const [facing, setFacing] = React.useState<CameraType>("front");
   const [torch, setTorch] = React.useState(false);
-  const [rawCols, setRawCols] = React.useState(false);
+  const [rawCols, setRawCols] = React.useState(true);
   const videoBitrate = 10_000_000;
   const videoQuality = "1080p";
 
   const [time, setTime] = React.useState("00:00:00");
-  const [ip, setIp] = React.useState<string | null>(null);
   const [timer] = React.useState(new Timer());
 
   React.useEffect(() => {
@@ -30,7 +28,6 @@ export default function Index() {
   React.useEffect(() => {
     ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.LANDSCAPE);
 
-    // const ip = Network.getIpAddressAsync().then((ip) => setIp(ip));
   }, []);
 
   // return (
@@ -38,6 +35,7 @@ export default function Index() {
   //     <Text className="text-white">Test</Text>
   //   </SafeAreaView>
   // );
+
   function toggleTorch() {
     if (facing === "front") return;
     setTorch((prev) => !prev);
